@@ -16,37 +16,37 @@ class Dynmap(object):
         
         try:
             self.claims = url+"/tiles/_markers_/marker_world.json"
-            f = urllib.urlopen(self.claims)
+            f = urllib.request.urlopen(self.claims)
             data = f.read() #Gets the data
             self.claimdata = json.loads(data)
             
             self.claims_nether = url+"/tiles/_markers_/marker_world_nether.json"
-            f = urllib.urlopen(self.claims_nether).read
+            f = urllib.request.urlopen(self.claims_nether).read
             self.claimdatanether = json.loads(data)
             
             self.claims_end = url+"/tiles/_markers_/marker_world_the_end.json"
-            f = urllib.urlopen(self.claims_end).read
+            f = urllib.request.urlopen(self.claims_end).read
             self.claimdataend = json.loads(data)
         except:
             print("Warning: Could not get claim data. This might be because your server does not support GriefProtection claims or the url was misconfigered. (Ignore if your server doesn't have GreifProtection installed)")
         
         
     def update(self): #Update the current dynmap information
-        f = urllib.urlopen(self.link)
+        f = urllib.request.urlopen(self.link)
         data = f.read() #Gets the data
         self.decoded = json.loads(data)
         
         try:
-            f = urllib.urlopen(self.claims)
+            f = urllib.request.urlopen(self.claims)
             data = f.read() #Gets the data
             self.claimdata = json.loads(data)
             
             self.claims_nether = url+"/tiles/_markers_/marker_world_nether.json"
-            f = urllib.urlopen(self.claims_nether).read
+            f = urllib.request.urlopen(self.claims_nether).read
             self.claimdatanether = json.loads(data)
             
             self.claims_end = url+"/tiles/_markers_/marker_world_the_end.json"
-            f = urllib.urlopen(self.claims_end).read
+            f = urllib.request.urlopen(self.claims_end).read
             self.claimdataend = json.loads(data)
         except:
             print("Warning: Could not get claim data. This might be because your server does not support GriefProtection claims or the url was misconfigered.")

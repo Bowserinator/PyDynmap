@@ -8,7 +8,7 @@ class Dynmap(object):
         self.link = url+"/up/world/world/"
         
         try:
-            f = urllib.urlopen(self.link)
+            f = urllib.request.urlopen(self.link)
             data = f.read() #Gets the data
             self.decoded = json.loads(data)
         except:

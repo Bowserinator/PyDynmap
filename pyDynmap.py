@@ -256,7 +256,3 @@ class Dynmap(object):
                 if world == key.split("_")[2] or world == "all":
                     returned.append(claims[key])
         return returned
-
-        
-    
-        

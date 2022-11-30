@@ -41,11 +41,11 @@ class Dynmap(object):
             data = f.read() #Gets the data
             self.claimdata = json.loads(data)
             
-            self.claims_nether = url+"/tiles/_markers_/marker_world_nether.json"
+            self.claims_nether = self.url+"/tiles/_markers_/marker_world_nether.json"
             f = urllib.request.urlopen(self.claims_nether).read
             self.claimdatanether = json.loads(data)
             
-            self.claims_end = url+"/tiles/_markers_/marker_world_the_end.json"
+            self.claims_end = self.url+"/tiles/_markers_/marker_world_the_end.json"
             f = urllib.request.urlopen(self.claims_end).read
             self.claimdataend = json.loads(data)
         except:
